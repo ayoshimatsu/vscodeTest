@@ -1,3 +1,4 @@
-shisaku-app/target/
-
 .vscode/
+
+shisaku-app/target/
+shisaku-app/gui/target/

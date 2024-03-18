@@ -9,7 +9,8 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>gui</module>
+    <module>development</module>
+    <module>communicate</module>
   </modules>
 
   <name>shisaku-app</name>

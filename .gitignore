@@ -1,4 +1,5 @@
 .vscode/
 
 shisaku-app/target/
-shisaku-app/gui/target/
+shisaku-app/development/target/
+shisaku-app/communicate/target/

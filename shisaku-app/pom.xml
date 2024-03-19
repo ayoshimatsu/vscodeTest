@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>development</module>
-    <module>communicate</module>
+    <module>component</module>
   </modules>
 
   <name>shisaku-app</name>

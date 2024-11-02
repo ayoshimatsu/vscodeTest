@@ -14,7 +14,7 @@ public class MainFrame extends JFrame{
 
         getContentPane().add(BorderLayout.WEST, button1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(200, 100);
+        setSize(200, 500);
     }
 
 }

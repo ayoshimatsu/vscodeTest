@@ -1,4 +1,11 @@
 .vscode/
 
-shisaku-app/development/target/
+shisaku-app/development/target/archive-tmp
+shisaku-app/development/target/classes
+shisaku-app/development/target/generated-sources
+shisaku-app/development/target/maven-archiver
+shisaku-app/development/target/maven-status
+shisaku-app/development/target/test-classes
+shisaku-app/development/target/development-1.0-SNAPSHOT.jar
+
 shisaku-app/component/target/

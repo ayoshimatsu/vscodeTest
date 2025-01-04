@@ -11,10 +11,12 @@ import javax.swing.JButton;
 
 public class ClientButtonAction extends JButton implements ActionListener {
 
-    String oServerIpAddress = "127.0.0.1";
+    private final String oServerIpAddress;
+    private final int oServerPort;
 
-    public ClientButtonAction(String aServerIpAddress) {
+    public ClientButtonAction(String aServerIpAddress, int aServerPort) {
         oServerIpAddress = aServerIpAddress;
+        oServerPort = aServerPort;
     }
 
     @Override
@@ -22,7 +24,7 @@ public class ClientButtonAction extends JButton implements ActionListener {
         System.out.println("button is pressed.");
 
         try {
-            Socket clientSocket = new Socket(oServerIpAddress, 5000);
+            Socket clientSocket = new Socket(oServerIpAddress, oServerPort);
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
                 String message = reader.readLine();
                 System.out.println("From server: " + message);

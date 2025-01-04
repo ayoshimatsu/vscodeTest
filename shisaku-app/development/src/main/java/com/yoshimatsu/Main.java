@@ -9,17 +9,18 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         
-        PropertiesParameter property = new PropertiesParameter(
-            "/var/myconf/setting.properties");
+        PropertiesParameter property = new PropertiesParameter("/var/myconf/setting.properties");
         String user = property.getUser();
         String serverIpAddress = property.getServerIpAddress();
+        int serverPort = Integer.parseInt(property.getServerPort());
 
-        System.out.println("User: " + user);
-        System.out.println("Server IP address: " + serverIpAddress);
+        // System.out.println("User: " + user);
+        // System.out.println("Server IP address: " + serverIpAddress);
+        // System.out.println("Server port: " + serverPort);
 
         if(user.equals("Server")) {
             try {
-                ServerSocket serverSocket = new ServerSocket(5000);
+                ServerSocket serverSocket = new ServerSocket(serverPort);
                 while (true) {
                     Socket socket = serverSocket.accept();
                     try (PrintWriter writer = new PrintWriter(socket.getOutputStream())) {
@@ -32,7 +33,7 @@ public class Main {
                 System.out.println(e);
             } 
         } else {
-            new ClientFrame(serverIpAddress).setVisible(true);
+            new ClientFrame(serverIpAddress, serverPort).setVisible(true);
         }
     }
 }

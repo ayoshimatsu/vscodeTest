@@ -10,12 +10,12 @@ import com.component.ServerButtonAction;
 
 public class ClientFrame extends JFrame{
 
-    public ClientFrame(String aServerIpAddress) {
+    public ClientFrame(String aServerIpAddress, int aServerPort) {
         // JButton serverButton = new JButton("Start Server");  
         // serverButton.addActionListener(new ServerButtonAction());
 
         JButton clientButton = new JButton("Start client");  
-        clientButton.addActionListener(new ClientButtonAction(aServerIpAddress));
+        clientButton.addActionListener(new ClientButtonAction(aServerIpAddress, aServerPort));
 
         // getContentPane().add(BorderLayout.WEST, serverButton);
         getContentPane().add(BorderLayout.EAST, clientButton);

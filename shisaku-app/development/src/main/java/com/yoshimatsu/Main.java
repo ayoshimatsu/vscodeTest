@@ -1,6 +1,10 @@
 package com.yoshimatsu;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -25,9 +29,10 @@ public class Main {
         String serverIpAddress = property.getServerIpAddress();
         int serverPort = Integer.parseInt(property.getServerPort());
 
-        // System.out.println("User: " + user);
-        // System.out.println("Server IP address: " + serverIpAddress);
-        // System.out.println("Server port: " + serverPort);
+        System.out.println("User: " + user);
+        System.out.println("Server IP address: " + serverIpAddress);
+        System.out.println("Server port: " + serverPort);
+
 
         if(user.equals("Server")) {
             try {
@@ -55,13 +60,11 @@ public class Main {
 
         if (Files.exists(linuxPath)){
             targetPath = linuxPath;
+            System.out.println("Get linux path.");
         } else if (Files.exists(windowPath)) {
             targetPath = windowPath;
+            System.out.println("Get window path.");
         } else {
-            System.out.println("properties file does not exist.");
-        }
-
-        if (targetPath == null) {
             throw new IOException("Can't find path: " + targetPath);
         }
 
